@@ -4,184 +4,176 @@
 
 <div class="container mb-5 ">
 
-    <div class="mt-4 ">
+  <div class="mt-4 ">
 
-        <h1 class="h1 font-weight-bold  text-default text-center ">
+    <h1 class="h1 font-weight-bold  text-default text-center ">
 
-            {{$Post->Titular}}
-
-
-
-        </h1>
+      {{$Post->Titular}}
 
 
-    </div>
-    <div class="row ">
 
-        <div class="col-md-8 mt-5 card ">
+    </h1>
 
-            <div class="container row ">
-                <p class="text-danger">etiquetas </p>
 
-                <div class="col-md-2">
-                    <span class="badge badge-pill badge-default">Default</span>
-                </div>
+  </div>
+  <div class="row ">
 
-                <div class="col-md-2">
-                    <span class="badge badge-pill badge-default">Default</span>
-                </div>
+    <div class="col-md-8 mt-5 card ">
 
-                <div class="col-md-2">
-                    <span class="badge badge-pill badge-default">Default</span>
-                </div>
-
-            </div>
+      
 
 
 
 
-            <div class=" text-center mt-5">
+      <div class=" text-center mt-5">
 
-                <img src="{{asset('storage').'/'.$Post->Foto}}" alt="" width="400px">
+        <img class="card-img-top" src="{{asset('/storage/images/posts/'. $Post->Foto)}}" alt="Card image cap">
 
-            </div>
+      </div>
 
-            <div class="col-md-10 ml-5  d-flex justify-content-center my-2 ">
-
-
-                <p class="ml-2 py-2 ">
-
-                    {{$Post->Cuerpo}}
-                </p>
-            </div>
-
-        </div>
-
-        <!--Zoom effect-->
+      <div class="col-md-10 ml-5  d-flex justify-content-center my-2 ">
 
 
-        <div class="col-md-3 ml-4">
+        <p class="ml-2 py-2 ">
 
-            <!-- Card -->
-            <div class=" mt-5">
-
-                <!-- Card image -->
-                <div class="view overlay d-flex justify-content-center">
-                    <div class="view overlay zoom">
-                        <img src="{{(asset('imgs/policeman-svgrepo-com.svg'))}}" alt=""
-                            class="img-fluid z-depth-1 rounded-circle zoom" width="200px">
-
-                    </div>
-
-
-                    <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-
-                <!-- Card content -->
-                <div class="card-body ">
-
-                    <!-- Title -->
-                    <h4 class="card-title text-center ">
-
-                        <p class="h3">{{$Post->user->name}}</p>
-
-                        <p class="h4 text-muted">{{$Post->departamento->Nombre}}</p>
-                    </h4>
-                    <!-- Text -->
-
-
-                </div>
-
-            </div>
-            <!-- Card -->
-
-        </div>
-
+          {{$Post->Cuerpo}}
+        </p>
+      </div>
 
     </div>
 
-   
-
-        <div class="row mt-5 d-flex justify-content-around">
-
-    
-
-            @if($PostBefore !== null )
+    <!--Zoom effect-->
 
 
-            <div class="col-4">
-                <!-- Card -->
-                <div class="card card-image"
-                    style="background-image: url({{asset('storage').'/'.$PostBefore->Foto}});background-size:cover; background-repeat: no-repeat;width: 300px;">
+    <div class="col-md-3 ml-4">
 
-                    <!-- Card image -->
-                    <div class="d-flex justify-content-center">
+      <!-- Card -->
+      <div class=" mt-5">
 
+        <!-- Card image -->
+        <div class="view overlay d-flex justify-content-center">
+          <div class="view overlay zoom">
+            <img src="{{(asset('imgs/policeman-svgrepo-com.svg'))}}" alt="" class="img-fluid z-depth-1 rounded-circle zoom" width="200px">
 
-                    </div>
-                    </a>
-                    <!-- Card content -->
-                    <div class="card-body mr-5 ">
-                        <a href="{{url ('/Post/'.$PostBefore->id)}}">
-                            <p class=" h4 text-white text-center font-weight-bold text-uppercase">
-                                {{Str::limit($PostBefore->Titular, 40)}}
-                            </p>
-                        </a>
-
-                        <!-- Text -->
-                        <h2 class="card-text ">
-                        </h2>
-                        <!-- Button -->
-
-                    </div>
-
-                </div>
-                <!-- Card -->
+          </div>
 
 
+          <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
 
-                @endif
-            </div>
+        <!-- Card content -->
+        <div class="card-body ">
 
-            @if($PostNext !== null )
+          <!-- Title -->
+          <h4 class="card-title text-center ">
 
-            <div class="col-4 ">
-                <div class="card "
-                    style="background-image: url({{asset('storage').'/'.$PostNext->Foto}});background-size:cover; background-repeat: no-repeat;width: 300px;">
+            <p class="h3">{{$Post->user->name}}</p>
 
-                    <!-- Card image -->
-                    <div class="d-flex justify-content-center">
-
-                    </div>
-                    </a>
-
-                    <!-- Card content -->
-                    <div class="card-body ml-5">
-
-                        <!-- Title -->
-                        <a href="{{url ('/Post/'.$PostNext->id)}}" class="">
-                            <p class=" h4 text-white text-center font-weight-bold text-uppercase">
-                                {{Str::limit($PostNext->Titular, 40)}}
-                            </p>
-                        </a>
-                        <!-- Button -->
-
-                    </div>
-
-                </div>
-            </div>
-
-
-            @endif
-
-
-
+            <p class="h4 text-muted">{{$Post->departamento->Nombre}}</p>
+          </h4>
+          <!-- Text -->
 
 
         </div>
 
+      </div>
+      <!-- Card -->
+
     </div>
 
 
-    @endsection
+  </div>
+
+
+
+  <div class="container mt-5 pb-2">
+
+    <h2 class="text-center">Relacionados</h2>
+
+  </div>
+
+
+  <div class="container mt-2">
+
+
+    <div class="row">
+
+
+      <div class="col-12  rgba-white-strong
+">
+
+
+
+        <div class="card-group">
+          <div class="container ">
+
+            <div class="row">
+
+              <div class="row col-12 ">
+                @foreach ($Posts as $posts)
+
+                <div class="col-2 d-flex align-items-center ">
+
+
+
+
+                  <div class="view overlay zoom">
+                    <div class=" img-fluid rounded-circle"><img src="{{asset('storage').'/images/posts/'.$posts->Foto}}" alt="zoom" style="width: 100px; height : 150px">
+
+                      <div class="mask flex-center waves-effect waves-light">
+                        <p class="white-text">Saber mas</p>
+                      </div>
+
+                    </div>
+
+
+
+
+
+                  </div>
+
+                </div>
+
+                <div class=" col-4">
+                  <div class="card mt-2">
+                    <div class="card-body">
+
+                      <a href="{{url ('/Post/'.$posts->id)}}">
+                        <h4 class="card-title">{{Str::limit($posts->Titular, 40)}}</h4>
+                      </a>
+
+                      <p class="card-text">{{Str::limit($posts->Cuerpo, 40)}}</p>
+                      <p class="card-text"><small class="text-muted text-center">{{$posts->created_at}}</small></p>
+                    </div>
+                  </div>
+
+
+                </div>
+
+
+                @endforeach
+
+              </div>
+
+
+            </div>
+
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+</div>
+</div>
+</div>
+@endsection

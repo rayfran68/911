@@ -1,7 +1,84 @@
 @extends('layout.master')
 
 @section('content')
+<style>
+    .carousel-items .item {
+        height: 1000px;
+    }
+
+    .item img {
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        min-height: 500px;
+    }
+
+    .main-text {
+        position: absolute;
+        top: 300px;
+        width: 96.66666666666666%;
+        color: #FFF;
+    }
+</style>
+
+
+
+
+
+
+
+
+<!--Carousel Wrapper-->
+<div id="carouselExampleFade" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <div class="carousel-inner ">
+
+
+        @foreach($mostrar as $mostrar)
+@if ($loop->first)
+
+<div class="carousel-item  active">
+
+<img src="{{$mostrar->Foto}}" style="height: 800px" class="w-100">
+
+            </div>
+@endif
+        <div class="carousel-item  ">
+            <img src="{{$mostrar->Foto}}" style="height: 800px" class="w-100">
+            </div>
+        @endforeach
+
+    </div>
+</div>
+<div class="main-text">
+    <div class="col-md-12 ">
+        <div class=" d-flex justify-content-center">
+
+            <img class=" animated rotateInUpRight slow  d-flex justify-content-end" src="{{('imgs/911.png')}}" style="height: 200px" alt="">
+            <div class=" ">
+                <div class="container flex-center text-center mt-5">
+                    <div class="row mt-5">
+                        <div class="col-md-12 wow fadeIn mb-3 ">
+                            <h1 class="display-3 mb-3 wow fadeInDown text-default " data-wow-delay="0.3s">¿Quienes somos?
+                            </h1>
+                            <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn text-dark" data-wow-delay="0.4s">Centro de
+                                comando, control y telecomunicacones VEN 911</h5>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+
+    </div>
+</div>
+</div>
+</div>
+<!--/.Carousel Wrapper-->
 <main>
+
 
     <div class="view jarallax d-flex justify-content-center " style="height: 100vh;">
         <img class="jarallax-img animated rotateInUpRight slow mt-2" src="{{('imgs/911.png')}}" height="40%" alt="">
@@ -202,11 +279,10 @@
 
         </div>
 
-        <div class="col-md-2 d-flex align-items-end pa" >
+        <div class="col-md-2 d-flex align-items-end pa">
 
             <div class="row">
-                <a href="#" data-toggle="tooltip" title="operadora"><img src="{{(asset('imgs/operador.svg'))}}" alt=""
-                        width="100px"></a>
+                <a href="#" data-toggle="tooltip" title="operadora"><img src="{{(asset('imgs/operador.svg'))}}" alt="" width="100px"></a>
                 <div class="row">
 
                     <i class="far fa-clock fa-2x"></i>
@@ -229,7 +305,7 @@
 
             <div class="row d-flex justify-content-center  d-flex align-items-end">
 
-            <i class="fas fa-angle-double-right fa-5x"></i>
+                <i class="fas fa-angle-double-right fa-5x"></i>
 
 
 
@@ -245,8 +321,7 @@
 
             <div class="row">
 
-                <a href="" data-toggle="tooltip" title="Despachador"><img src="{{(asset('imgs/operadorM.svg'))}}" alt=""
-                        width="100px"></a>
+                <a href="" data-toggle="tooltip" title="Despachador"><img src="{{(asset('imgs/operadorM.svg'))}}" alt="" width="100px"></a>
 
                 <div class="row">
 
@@ -398,5 +473,7 @@
 
 
 </div>
+</div>
+
 <!--Operatividad -->
 @endsection

@@ -49,6 +49,7 @@
 
                                 <a class="dropdown-item" href="{{ route('VerPosts') }}">Administrar publicaciones</a>
 
+                                <a class="dropdown-item" href="{{ route('LlenarCarousel') }}">Agregar Elementos al carousel</a>
 
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"

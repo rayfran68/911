@@ -3,6 +3,10 @@
 @section('content')
 
 <div class="container">
+
+
+</div>
+
     <div class="row ">
         @foreach($Post as $Post)
         
@@ -12,7 +16,7 @@
             <div class="card">
 
                 <!-- Card image -->
-                <img class="card-img-top" src="{{asset('storage').'/'.$Post->Foto}}" alt="Card image cap">
+                <img class="card-img-top " src="{{asset('/storage/images/posts/'. $Post->Foto)}}" alt="Card image cap">
 
                 <!-- Card content -->
                 <div class="card-body ">
@@ -25,7 +29,6 @@
 
                     <div class="container">
                         <div class="row ">
-
                             <div class="col-md-3 mr-5">
 
                                 <form action="/EditPosts/{{$Post->id}}" method="post">
@@ -64,16 +67,21 @@
         </div>
         @endforeach
 
-    </div>
+
+  
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
 </div>
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 @endsection

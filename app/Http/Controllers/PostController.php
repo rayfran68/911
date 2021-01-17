@@ -1,10 +1,12 @@
 <?php
+
 namespace App\Http\Controllers;
 use App\Post;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+
 
 use App\User;
 use App\Departamento;
@@ -75,8 +77,23 @@ class PostController extends Controller
     $this->validate($request, $Campos , $Mensaje);
     $newPost= new Post;
 
+    if ($request->Hasfile('Foto')){
+
+        $destination_path='images/posts';
+        $image=$request->file('Foto');
+        $image_name=$image->getClientOriginalName();
+        $path=$request->file('Foto')->storeAs($destination_path, $image_name );
+        $input['Foto']=$image_name;
+        
+
+
+        $newPost->Foto = $image_name;
+
+       
+
+    }
     
-        $newPost->Foto=$request->file('Foto')->store('uploads', 'public');
+    
     
         $departamento = Departamento::all();
 
@@ -99,11 +116,13 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show()
-    {
+    {   
+        
         $departamento = Departamento::all();
-
+        
       $id= Auth::id();
       $Post = User::find($id)->post;
+
 
 //dd($Post);
       return view('Posts.show',compact('Post', 'departamento'));
@@ -113,11 +132,20 @@ class PostController extends Controller
 
     public function showPublic($id)
     {
+        
+    
+        $departamento = Departamento::all();
 
-      $Post = Post::find($id);
+    $Post = Post::find($id);
+  $post_id = $Post->departamento_id;
+
+  $Posts = Departamento::find($post_id)->post;
+
       $PostNext = Post::find($id + 1);
       $PostBefore = Post::find($id - 1);
-     return view('PostsPublic.Post', compact('Post','PostNext','PostBefore' ));
+      $link = Storage::path($Post->Foto);
+      
+     return view('PostsPublic.Post', compact('Post','PostNext','PostBefore','link', 'Posts' ));
 
 
     }
@@ -167,14 +195,20 @@ class PostController extends Controller
         if ($request->hasFile('Foto')){
 
 $Post= Post::findorFail($id);
-             
-            Storage::delete('public/'.$Post->Foto);
 
-            $datosPost['Foto']=$request->file('Foto')->store('uploads', 'public');
 
+            Storage::delete('images/posts/', $Post->Foto);
+
+            
+            $datosPost['Foto']=$request->file('Foto')->storeAs('images\posts', $Post->Foto);
+
+            $datosPost['Foto'] = $Post->Foto ;
 
 
         }
+
+
+      
 
         Post::where('id', '=', $id)->update($datosPost);
 
@@ -187,8 +221,23 @@ $Post= Post::findorFail($id);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy( Request $request , $id)
+    
     {
+        $datosPost = request()->except(['_token','_method']);
+        
+        if ($request->hasFile('Foto')){
+
+            $Post= Post::findorFail($id);
+            
+                        
+            
+                        Storage::delete('images/posts/', $Post->Foto);
+            
+                            
+                       
+            
+                    }
         Post::destroy($id);
         return redirect('VerPosts');
     }

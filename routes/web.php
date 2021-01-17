@@ -53,6 +53,10 @@ Route::POST('/EditPosts/{id}', 'PostController@edit')->name('EditPosts');
 
 Route::PUT('/UpdatePosts/{id}', 'PostController@update')->name('UpdatePosts');
 
+Route::get('/CarouselLlenar', 'CarouselController@create' )->name('LlenarCarousel');
+
+Route::POST('/CarouselStore', 'CarouselController@store' )->name('StoreCarousel');
+
 
 Route::get('/Register', function () {
     return view('Auth.Register');

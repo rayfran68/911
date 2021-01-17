@@ -22,7 +22,7 @@
 
                 <div class="md-form mb-4 pink-textarea active-pink-textarea">
                     <i class="fas fa-feather prefix"></i>
-                    <textarea id="Titular" name="Titular"  class="md-textarea form-control" rows="2"> {{$Post->Titular}} </textarea>
+                    <textarea id="Titular" name="Titular" class="md-textarea form-control" rows="2"> {{$Post->Titular}} </textarea>
                     <label for="form21">TITULAR</label>
                     <input type="hidden" name="_method" value="PUT">
 
@@ -30,20 +30,20 @@
 
             </div>
         </div>
-        <div class="col-4 text-center">
-{{$Post->Foto}}
-</div>
+        
         <div class="row d-flex justify-content-center">
-
+        <div class="col-4 text-center">
+            <div class="col-12"> <img class="card-img-top rounded-pill " src="{{asset('/storage/images/posts/'. $Post->Foto)}}" alt="Card image cap"> </div>
+            
+        </div>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroupFileAddon01">Subir imagen</span>
                 </div>
                 <div class="custom-file">
 
-                    <input type="file" class="custom-file-input" id="Foto" name="Foto" value=""
-                        aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="Foto">Seleccione imagen</label>
+                    <input type="file" class="custom-file-input" id="Foto" name="Foto" value="" aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="Foto">{{$Post->Foto}}</label>
                 </div>
             </div>
         </div>

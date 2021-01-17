@@ -7,6 +7,8 @@ use Auth;
 use App\User;
 use App\Post;
 use App\Departamento;
+use App\Carousel;
+
 
 class HomeController extends Controller
 {
@@ -25,7 +27,9 @@ class HomeController extends Controller
     
     {
 
-        return view('Welcome');
+        $mostrar =Carousel::all();
+
+        return view('welcome',compact('mostrar'));
 
     }
 }

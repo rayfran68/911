@@ -53,7 +53,6 @@
             <thead class="black white-text">
                 <tr>
                     <th scope="col">Cuadrante</th>
-                    <th scope="col">telefono</th>
                     <th scope="col">organismo</th>
                     <th scope="col">sector</th>
 
@@ -67,7 +66,6 @@
                 <tr>
 
                     <td> {{ $cuadrante->cuadrante }} </td>
-                    <td>{{ $cuadrante->telefono }}</td>
                     <td>{{ $cuadrante->organismo->siglas }}</td>
                     <td> {{ $cuadrante->sectores }} </td>
 

@@ -68,4 +68,4 @@ Auth::routes(['reset'=>false]);
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index2');

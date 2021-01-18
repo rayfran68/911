@@ -32,4 +32,14 @@ class HomeController extends Controller
         return view('welcome',compact('mostrar'));
 
     }
+
+
+
+    public function index2()
+    
+    {
+
+
+        return("MAMAGUEBO");
+    }
 }

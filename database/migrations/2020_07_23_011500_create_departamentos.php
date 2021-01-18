@@ -16,6 +16,12 @@ class CreateDepartamentos extends Migration
         Schema::create('departamentos', function (Blueprint $table) {
             $table->longText('Nombre')->unique();
             $table->bigIncrements('id');
+
+            DB::table("departamentos")
+            ->insert([
+                "Nombre" => "Tecnologia", "Jefe De Sipi"
+                
+            ]);
         });
     }
 

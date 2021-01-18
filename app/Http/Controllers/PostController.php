@@ -27,7 +27,7 @@ class PostController extends Controller
         $Post = Post::all();
   
   //dd($Post);
-        return view('PostsPublic.show',compact('Post', 'departamento'));
+        return view('postsPublic.show',compact('Post', 'departamento'));
     }
 
     /**
@@ -41,12 +41,12 @@ class PostController extends Controller
         if(Auth::check()){
 
 
-            return view('Posts.create', compact('departamento'));
+            return view('posts.create', compact('departamento'));
     
         }
         else{
     
-            return view('Auth.login', compact('departamento'));
+            return view('auth.login', compact('departamento'));
         }
        
     }
@@ -125,7 +125,7 @@ class PostController extends Controller
 
 
 //dd($Post);
-      return view('Posts.show',compact('Post', 'departamento'));
+      return view('posts.show',compact('Post', 'departamento'));
 
     }
 
@@ -145,7 +145,7 @@ class PostController extends Controller
       $PostBefore = Post::find($id - 1);
       $link = Storage::path($Post->Foto);
       
-     return view('PostsPublic.Post', compact('Post','PostNext','PostBefore','link', 'Posts' ));
+     return view('postsPublic.Post', compact('Post','PostNext','PostBefore','link', 'Posts' ));
 
 
     }
@@ -158,7 +158,7 @@ class PostController extends Controller
         $id= $request->input('departamento');
         $Post = Departamento::find($id)->post;
       
-        return view('PostsPublic.show',compact('Post', 'departamento'));
+        return view('postsPublic.show',compact('Post', 'departamento'));
 
 
 
@@ -176,7 +176,7 @@ class PostController extends Controller
 
         $Post= Post::findorFail($id);
 
-        return view('Posts.edit',compact('Post', 'departamento'));
+        return view('posts.edit',compact('Post', 'departamento'));
 
     }
 

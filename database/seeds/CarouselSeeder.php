@@ -11,6 +11,6 @@ class CarouselSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $this->call(CarouselSeeder::class)
     }
 }

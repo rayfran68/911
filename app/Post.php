@@ -10,11 +10,11 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App/User');
     }
     public function departamento()
     {
-        return $this->belongsTo('App\Departamento');
+        return $this->belongsTo('App/Departamento');
     }
 
 }

@@ -27,9 +27,9 @@ class HomeController extends Controller
     
     {
 
-        $mostrar =Carousel::all();
+        $mostrar = Carousel::all();
 
-        return view('welcome',compact('mostrar'));
+        return view('welcome', compact('mostrar'));
 
     }
 

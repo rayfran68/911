@@ -17,11 +17,7 @@ class CreateDepartamentos extends Migration
             $table->longText('Nombre')->unique();
             $table->bigIncrements('id');
 
-            DB::table("departamentos")
-            ->insert([
-                "Nombre" => "Tecnologia", "Jefe De Sipi"
-                
-            ]);
+            
         });
     }
 

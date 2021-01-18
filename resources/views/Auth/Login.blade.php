@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('Layout.master')
 
 @section('content')
 <div class="container mb-5 pb-5">

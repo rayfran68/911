@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('Layout.master')
 
 @section('content')
 <form action="/UpdatePosts/{{$Post->id}}" method="POST" enctype="multipart/form-data">

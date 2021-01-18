@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('Layout.master')
 
 @section('content')
 <form action="/PostsDepartamento" method="GET" enctype="multipart/form-data">

@@ -22,12 +22,12 @@
 <body id="body" class="sidebar-mini skin-blue sidebar-collapse hold-transition">
   <div class="wrapper">
 
-    @include('layout.header')
+    @include('Layout.header')
     <!-- Left side column. contains the logo and sidebar -->
     @yield('content')
 
     <!-- /.content-wrapper -->
-    @include('layout.footer')
+    @include('Layout.footer')
 
     <!-- ./wrapper -->
 

@@ -26,7 +26,7 @@ Route::get('/Operatividad', function () {
 
 
 Route::get('/login', function () {
-    return view ('Prueba ruta');
+    return('Prueba ruta');
 });
 
 

@@ -13,6 +13,6 @@ class Departamento extends Model
 
     
     public $timestamps = false;
-
+    
 }
 

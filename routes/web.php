@@ -59,9 +59,12 @@ Route::POST('/CarouselStore', 'CarouselController@store' )->name('StoreCarousel'
 
 
 Route::get('/Register', function () {
-    return view('auth.register');
+    return view('Auth.Register');
 });
 
+Route::get('/Registerr', function () {
+    return view('Auth.Register');
+});
 
 
 Auth::routes(['reset'=>false]);

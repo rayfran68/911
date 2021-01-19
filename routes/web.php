@@ -37,7 +37,7 @@ Route::GET('/Post/{id}', 'PostController@showPublic')->name('Post');
 Route::POST('/Departamento_id', 'RegisterController@departamento_id' )->name('Departamento_id');
 
 
-Route::POST('/crearPost', 'PostController@store' )->name('CrearPost');
+Route::POST('/CrearPost', 'PostController@store' )->name('CrearPost');
 
 Route::get('/verPosts', 'PostController@show')->name('VerPosts');
 

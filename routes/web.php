@@ -64,7 +64,7 @@ Route::get('/Register', function () {
 
 Route::get('/Login', function () {
     return view('Auth.Login');
-});
+})->name('Login');;
 
 
 

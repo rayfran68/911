@@ -10,4 +10,9 @@ class Departamento extends Model
     {
         return $this->hasMany('App/post');
     }
+
+    
+    public $timestamps = false;
+
 }
+

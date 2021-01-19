@@ -27,7 +27,7 @@
 
       <div class=" text-center mt-5">
 
-        <img class="card-img-top" src="{{asset('/storage/images/posts/'. $Post->Foto)}}" alt="Card image cap">
+        <img class="card-img-top" src="{{('storage/images/posts/$Post->Foto')}}"  alt="Card image cap">
 
       </div>
 

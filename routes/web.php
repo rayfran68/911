@@ -26,7 +26,7 @@ Route::get('/Operatividad', function () {
 
 
 Route::get('/login', function () {
-    return view ('Auth.Login');
+    return view ('Prueba ruta');
 });
 
 
@@ -58,11 +58,11 @@ Route::get('/CarouselLlenar', 'CarouselController@create' )->name('LlenarCarouse
 Route::POST('/CarouselStore', 'CarouselController@store' )->name('StoreCarousel');
 
 
-Route::get('/Register', function () {
+Route::get('/register', function () {
     return view('Auth.Register');
 });
 
-Route::get('/Registerr', function () {
+Route::get('/registerr', function () {
     return view('Auth.Register');
 });
 

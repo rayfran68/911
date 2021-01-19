@@ -25,7 +25,7 @@ Route::get('/Operatividad', function () {
 });
 
 
-Route::get('/Login', function () {
+Route::get('/login', function () {
     return view ('cOÑOOOO');
 });
 
@@ -39,12 +39,12 @@ Route::GET('/Post/{id}', 'PostController@showPublic')->name('Post');
 Route::POST('/Departamento_id', 'RegisterController@departamento_id' )->name('Departamento_id');
 
 
-Route::POST('/CrearPost', 'PostController@store' )->name('CrearPost');
+Route::POST('/crearPost', 'PostController@store' )->name('CrearPost');
 
-Route::get('/VerPosts', 'PostController@show')->name('VerPosts');
+Route::get('/verPosts', 'PostController@show')->name('VerPosts');
 
 
-Route::GET('/PostsDepartamento', 'PostController@showPublicDepartamento');
+Route::GET('/postsDepartamento', 'PostController@showPublicDepartamento');
 
 
 Route::POST('/BorrarPosts/{id}', 'PostController@destroy')->name('BorrarPosts');

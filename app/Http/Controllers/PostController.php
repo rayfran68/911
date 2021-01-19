@@ -104,7 +104,7 @@ class PostController extends Controller
     $userId = Auth::id();
     $newPost->user_id=$userId;
     $newPost->save();
-    return redirect('VerPosts');
+    return redirect('verPosts');
 
 
     }

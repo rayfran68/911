@@ -79,10 +79,10 @@ class PostController extends Controller
 
     if ($request->Hasfile('Foto')){
 
-        $destination_path='images/posts';
+        $destination_path='public/posts';
         $image=$request->file('Foto');
         $image_name=$image->getClientOriginalName();
-        $path=$request->file('Foto')->storeAs('public', $image_name );
+        $path=$request->file('Foto')->storeAs($destination_path, $image_name );
         $input['Foto']=$image_name;
         
 

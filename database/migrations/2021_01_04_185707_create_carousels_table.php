@@ -17,6 +17,7 @@ class CreateCarouselsTable extends Migration
             $table->id();
             $table->string('Foto');
             $table->timestamps();
+            
         });
     }
 

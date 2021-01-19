@@ -16,6 +16,9 @@ class DepartamentoSeeder extends Seeder
         $Default->Nombre = "Default";
         $Default->save();
 
+        $Default2 = new Departamento();
+        $Default2->Nombre = "Default2";
+        $Default2->save();
 
     }
 }

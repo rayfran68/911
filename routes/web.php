@@ -26,7 +26,7 @@ Route::get('/Operatividad', function () {
 
 
 Route::get('/Login', function () {
-    return view('Auth.login');
+    return view('Auth.Login');
 });
 
 

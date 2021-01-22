@@ -28,7 +28,7 @@ Route::get('/Operatividad', function () {
 
 
 
-Route::get('/PostCreate','PostController@create')->name('PostCreate');
+Route::get('/PostCreate','PostController@create')->name('PostCreate')->middleware('auth');
 
 Route::GET('/Posts', 'PostController@index')->name('Posts');
 
@@ -37,21 +37,21 @@ Route::GET('/Post/{id}', 'PostController@showPublic')->name('Post');
 Route::POST('/Departamento_id', 'RegisterController@departamento_id' )->name('Departamento_id');
 
 
-Route::POST('/CrearPost', 'PostController@store' )->name('CrearPost');
+Route::POST('/PostStore', 'PostController@store' )->name('storepost');
 
-Route::get('/verPosts', 'PostController@show')->name('VerPosts');
+Route::get('/verPosts', 'PostController@show')->name('verPosts');
 
 
 Route::GET('/postsDepartamento', 'PostController@showPublicDepartamento');
 
 
-Route::POST('/BorrarPosts/{id}', 'PostController@destroy')->name('BorrarPosts');
+Route::POST('/BorrarPosts/{id}', 'PostController@destroy')->name('BorrarPosts')->middleware('auth');
 
-Route::POST('/EditPosts/{id}', 'PostController@edit')->name('EditPosts');
+Route::POST('/EditPosts/{id}', 'PostController@edit')->name('EditPosts')->middleware('auth');
 
-Route::PUT('/UpdatePosts/{id}', 'PostController@update')->name('UpdatePosts');
+Route::PUT('/UpdatePosts/{id}', 'PostController@update')->name('UpdatePosts')->middleware('auth');
 
-Route::get('/CarouselLlenar', 'CarouselController@create' )->name('LlenarCarousel');
+Route::get('/CarouselLlenar', 'CarouselController@create' )->name('LlenarCarousel')->middleware('auth');
 
 Route::POST('/CarouselStore', 'CarouselController@store' )->name('StoreCarousel');
 

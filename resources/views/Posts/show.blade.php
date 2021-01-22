@@ -73,6 +73,9 @@
 
 </div>
 
+
+@if(empty($Post->name))
+
 <br>
 <br>
 <br>
@@ -83,5 +86,39 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+@else
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+@endif
+
+
 
 @endsection

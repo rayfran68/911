@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 
 use App\User;
-use App\Departamento;
+use App\Category;
 
 
 
@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function index(Request $request )
     {
-        $departamento = Departamento::all();
+        $departamento = Category::all();
 
         $Post = Post::all();
   
@@ -37,18 +37,14 @@ class PostController extends Controller
      */
     public function create()
     {   
-        $departamento = Departamento::all();
-        if(Auth::check()){
+        $departamento = Category::all();
+
 
 
             return view('Posts.create', compact('departamento'));
     
-        }
-        else{
-    
-            return view('Auth.login', compact('departamento'));
-        }
-       
+      
+
     }
 
     /**
@@ -62,21 +58,25 @@ class PostController extends Controller
     {
 
 
-        $Campos=['Titular' => 'required|string|max:1000',
-                'Cuerpo' => 'required|string|max:100000',
-                'departamento_id' => 'required|integer',
-                'Foto' => 'required|file'
+
+
+    
+        
+        $Campos=['name' => 'required|string|max:1000',
+                'body' => 'required|string|max:100000',
+                'category_id' => 'required|integer',
 
                 
                 
         
     ];
 
-    $Mensaje=["required" =>'El :attribute es requerido'];
+    $message=["required" =>'El :attribute es requerido'];
 
-    $this->validate($request, $Campos , $Mensaje);
+    $this->validate($request, $Campos , $message);
+
     $newPost= new Post;
-
+/*
     if ($request->Hasfile('Foto')){
 
         $destination_path='public';
@@ -94,17 +94,18 @@ class PostController extends Controller
     }
     
     
-    
-        $departamento = Departamento::all();
+*/    
+        $category = Category::all();
 
     
-    $newPost->Titular=$request->Titular;
-    $newPost->Cuerpo=$request->Cuerpo;
-    $newPost->departamento_id = $request->departamento_id; 
+    $newPost->name=$request->name;
+    $newPost->body=$request->body;
+    $newPost->category_id = $request->category_id; 
     $userId = Auth::id();
     $newPost->user_id=$userId;
     $newPost->save();
     return redirect('verPosts');
+
 
 
     }
@@ -118,7 +119,7 @@ class PostController extends Controller
     public function show()
     {   
         
-        $departamento = Departamento::all();
+        $departamento = Category::all();
         
       $id= Auth::id();
       $Post = User::find($id)->post;
@@ -134,12 +135,12 @@ class PostController extends Controller
     {
         
     
-        $departamento = Departamento::all();
+        $departamento = Category::all();
 
     $Post = Post::find($id);
-  $post_id = $Post->departamento_id;
+  $post_id = $Post->category_id;
 
-  $Posts = Departamento::find($post_id)->post;
+  $Posts = Category::find($post_id)->post;
 
       $PostNext = Post::find($id + 1);
       $PostBefore = Post::find($id - 1);
@@ -153,10 +154,10 @@ class PostController extends Controller
 
     public function showPublicDepartamento(Request $request)
     {
-        $departamento = Departamento::all();
+        $departamento = Category::all();
 
-        $id= $request->input('departamento');
-        $Post = Departamento::find($id)->post;
+        $id= $request->input('category_id');
+        $Post = Category::find($id)->post;
       
         return view('PostsPublic.show',compact('Post', 'departamento'));
 
@@ -172,7 +173,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $departamento = Departamento::all();
+        $departamento = Category::all();
 
         $Post= Post::findorFail($id);
 

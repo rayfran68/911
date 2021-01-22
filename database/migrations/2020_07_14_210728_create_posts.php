@@ -16,11 +16,12 @@ class CreatePosts extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->integer('departamento_id');
-            $table->longText('Titular')->unique();
-            $table->string('Foto');
-            $table->longText('Cuerpo')->unique();
+            $table->integer('category_id');
+            $table->longText('name')->unique();
+            $table->longText('body')->unique();
             $table->timestamps();
+            $table->boolean('active')->default('1');	
+
             $table->softDeletes();
         });
     }

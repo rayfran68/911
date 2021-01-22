@@ -18,7 +18,7 @@
         position: absolute;
         top: 300px;
         width: 96.66666666666666%;
-        color: #FFF;
+        color: #FFFF;
     }
 </style>
 
@@ -35,17 +35,31 @@
 
 
         @foreach($mostrar as $mostrar)
-@if ($loop->first)
+        @if ($loop->first)
 
-<div class="carousel-item  active">
+        <div class="carousel-item  active">
 
-<img src="{{$mostrar->Foto}}" style="height: 800px" class="w-100">
-
+            <div class="view">
+                <img src="{{$mostrar->Foto}}" style="height: 800px" class="w-100">
+                <div class="mask flex-center rgba-black-slight">
+                </div>
             </div>
-@endif
+
+        </div>
+        @endif
+
+
+
         <div class="carousel-item  ">
-            <img src="{{$mostrar->Foto}}" style="height: 800px" class="w-100">
+            <div class="view">
+                <img src="{{$mostrar->Foto}}" style="height: 800px" class="w-100">
+                <div class="mask flex-center rgba-black-slight">
+                </div>
             </div>
+
+
+        </div>
+
         @endforeach
 
     </div>
@@ -59,10 +73,11 @@
                 <div class="container flex-center text-center mt-5">
                     <div class="row mt-5">
                         <div class="col-md-12 wow fadeIn mb-3 ">
-                            <h1 class="display-3 mb-3 wow fadeInDown text-default " data-wow-delay="0.3s">¿Quienes somos?
+                            <h1 class="display-3 mb-3 wow fadeInDown text-blue " data-wow-delay="0.3s">¿Quienes somos?
                             </h1>
-                            <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn text-dark" data-wow-delay="0.4s">Centro de
-                                comando, control y telecomunicacones VEN 911</h5>
+                            <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn text-black" data-wow-delay="0.4s">Centro de
+                                comando, control y telecomunicacones </h5>
+                                <h1 class="text-center font-weight-bold text-danger">VEN 911</h1>
 
                         </div>
                     </div>
@@ -86,10 +101,12 @@
             <div class="container flex-center text-center mt-5">
                 <div class="row mt-5">
                     <div class="col-md-12 wow fadeIn mb-3 ">
-                        <h1 class="display-3 mb-3 wow fadeInDown text-default " data-wow-delay="0.3s">¿Quienes somos?
-                        </h1>
+                        <h2 class="display-3 mb-3 wow fadeInDown text-default " data-wow-delay="0.3s">¿Quienes somos?
+                        </h2>
                         <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">Centro de
-                            comando, control y telecomunicacones VEN 911</h5>
+                            comando, control y telecomunicacones</h5>
+                            <br>
+                            <h1 class="text-center">911</h1>
 
                     </div>
                 </div>

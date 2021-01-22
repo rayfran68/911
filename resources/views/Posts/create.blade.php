@@ -1,7 +1,7 @@
 @extends('Layout.master')
 
 @section('content')
-<form action="/CrearPost" method="POST" enctype="multipart/form-data">
+<form action="/PostStore" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="container   ">
         @if(count($errors)>0)
@@ -22,7 +22,7 @@
 
                 <div class="md-form mb-4 pink-textarea active-pink-textarea">
                     <i class="fas fa-feather prefix"></i>
-                    <textarea id="Titular" name="Titular" class="md-textarea form-control" rows="2"></textarea>
+                    <textarea id="name" name="name" class="md-textarea form-control" rows="2"></textarea>
                     <label for="form21">TITULAR</label>
 
                 </div>
@@ -32,16 +32,7 @@
 
         <div class="row d-flex justify-content-center">
 
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupFileAddon01">Subir imagen</span>
-                </div>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="Foto" name="Foto"
-                        aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="Foto">Seleccione imagen</label>
-                </div>
-            </div>
+            <h1>Subida de imagen</h1>
         </div>
         
 
@@ -50,9 +41,9 @@
             <div class="col-md-12">
 
                 <div class="md-form mb-4 pink-textarea active-pink-textarea">
-
                     <i class="far fa-clipboard prefix"></i>
-                    <textarea id="Cuerpo" name="Cuerpo" class="md-textarea form-control" rows="15"></textarea>
+
+                    <textarea id="body" name="body" class="md-textarea form-control" rows="15"></textarea>
                     <label for="form21">Cuerpo</label>
 
                 </div>
@@ -61,10 +52,10 @@
         </div>
         <div class="row">
 
-            <select class="browser-default custom-select md-form" name="departamento_id" id="departamento_id">
+            <select class="browser-default custom-select md-form" name="category_id" id="category_id">
                 @foreach($departamento as $departamento)
                 <option  value="{{$departamento->id}}">
-                    {{$departamento->Nombre}}</option>
+                    {{$departamento->name}}</option>
                 @endforeach
             </select>
         </div>

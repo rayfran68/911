@@ -4,18 +4,12 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
+   
     public function run()
     {
 
 
-        $this->call(CarouselSeeder::class);
-
-        $this->call(DepartamentoSeeder::class);
+        $this->call(CategorySeeder::class);
 
 
         // $this->call(UsersTableSeeder::class);

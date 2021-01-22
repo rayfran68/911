@@ -47,7 +47,7 @@
 
                                 <a class="dropdown-item" href=" {{ route('PostCreate') }}">Crear Publicacion</a>
 
-                                <a class="dropdown-item" href="{{ route('VerPosts') }}">Administrar publicaciones</a>
+                                <a class="dropdown-item" href="{{ route('verPosts') }}">Administrar publicaciones</a>
 
                                 <a class="dropdown-item" href="{{ route('LlenarCarousel') }}">Agregar Elementos al carousel</a>
 

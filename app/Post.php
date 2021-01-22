@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable=["Titular", "Cuerpo", "Foto", "departamento_id"];
+    protected $fillable=["name", "body", "category_id"];
 
     public function user()
     {
         return $this->belongsTo('App/User');
     }
-    public function departamento()
+    public function category()
     {
-        return $this->belongsTo('App/Departamento');
+        return $this->belongsTo('App/Category');
     }
 
 }

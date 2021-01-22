@@ -48,7 +48,7 @@ class CarouselController extends Controller
        ]);
 
 
-        $foto=$request->file('file')->store('images/carousel');
+        $foto=$request->file('file')->store('public/images/carousel');
 
     $url = Storage::url($foto);
     
